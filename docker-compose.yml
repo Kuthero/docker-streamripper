@@ -1,0 +1,14 @@
+version: '3'
+services:
+  streamripper:
+    image: clue/streamripper
+    restart: always
+    volumes:
+      -  /home/ubuntu/docker-streamripper/audio:/home/streamripper
+    command: https://www.iheart.com/live/iheart60s-radio-6873/ -o version
+  web:
+    image: clue/h5ai
+    ports:
+      - 80:80
+    volumes:
+      - /home/ubuntu/docker-streamripper/audio:/var/www
