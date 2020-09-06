@@ -5,7 +5,7 @@ services:
     restart: always
     volumes:
       -  /home/ubuntu/docker-streamripper/audio:/home/streamripper
-    command: https://www.iheart.com/live/iheart60s-radio-6873/ -o version
+    command: <streamlink> -o version
   web:
     image: clue/h5ai
     ports:
